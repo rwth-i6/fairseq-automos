@@ -1,7 +1,9 @@
 pretrained/
 fairseq/
 sv56_norm/bin/
+tmpdir/
 
+__pycache__
 *.swp
 .done-sv56
 .history.*

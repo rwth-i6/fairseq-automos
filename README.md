@@ -12,7 +12,9 @@ Please cite the original publication when using this code:
 
 ## Installation:
  * Please install the Python packages: numpy, scipy, torch, torchaudio, fairseq
- * Use `download_w2v_small.py` to download the pretrained models
+ * Use `install_sv56.sh` to download and compile the sv56 tool from the ITU-T SLT
+ * Use `download_w2v_small.sh` to download the pretrained models
+
 
 ## License
 

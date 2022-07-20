@@ -28,7 +28,7 @@ then
     BITS16=${OUTPUT}.16bit.wav
 
     SOX=sox
-    SV56=${SV56_DIR}/sv56demo/bin/sv56demo
+    SV56=${SV56_DIR}/bin/sv56demo
     SCALE=${SV56_DIR}/sv56scripts/03_scale.py
     
     if ! type "${SOX}" &> /dev/null; then
