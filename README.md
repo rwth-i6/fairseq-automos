@@ -1,26 +1,18 @@
-# Finetune SSL models for MOS prediction
+This is code adapted from the baseline model for the VoiceMOS 2022 challenge to be used for convenient MOS prediction on arbitrary audio data.
 
-This is code for our paper which has been accepted to ICASSP 2022:
+For the original code please refer to: https://github.com/nii-yamagishilab/mos-finetune-ssl,
+which is provided by the National Institute of Informatics, Japan.
 
-"Generalization Ability of MOS Prediction Networks"  Erica Cooper, Wen-Chin Huang, Tomoki Toda, Junichi Yamagishi  https://arxiv.org/abs/2110.02635
+The audio normalization scripts are taken from:
+https://zenodo.org/record/6572573
 
-Please cite this preprint if you use this code.
+Please cite the original publication when using this code:
 
-## Dependencies:
+"Generalization Ability of MOS Prediction Networks"  Erica Cooper, Wen-Chin Huang, Tomoki Toda, Junichi Yamagishi  https://ieeexplore.ieee.org/document/9746395 (published at ICASSP 2022)
 
- * Fairseq toolkit:  https://github.com/pytorch/fairseq  Make sure you can `import fairseq` in Python.
- * torch, numpy, scipy, torchaudio
- * I have exported my conda environment for this project to `environment.yml`
- * You also need to download a pretrained wav2vec2 model checkpoint.  These can be obtained here:  https://github.com/pytorch/fairseq/tree/main/examples/wav2vec  If you are using the `run_inference_for_challenge.py` script, one will be downloaded for you automatically.  Otherwise, please choose `wav2vec_small.pt`, `w2v_large_lv_fsh_swbd_cv.pt`, or `xlsr_53_56k.pt`. 
- * You also need to have a MOS dataset.  You can find the BVCC dataset of MOS ratings that was used for the VoiceMOS Challenge here:  https://zenodo.org/record/6572573#.Yphw5y8RprQ
-
-## How to use
-
-Please see instructions in `VoiceMOS_baseline_README.md`
-
-## Acknowledgments
-
-This study is supported by JST CREST grants JP- MJCR18A6, JPMJCR20D3, and JPMJCR19A3, and by MEXT KAKENHI grants 21K11951 and 21K19808. Thanks to the organizers of the Blizzard Challenge and Voice Conversion Challenge, and to Zhenhua Ling, Zhihang Xie, and Zhizheng Wu for answering our questions about past challenges.  Thanks also to the Fairseq team for making their code and models available.
+## Installation:
+ * Please install the Python packages: numpy, scipy, torch, torchaudio, fairseq
+ * Use `download_w2v_small.py` to download the pretrained models
 
 ## License
 

@@ -1,0 +1,7 @@
+pretrained/
+fairseq/
+sv56_norm/bin/
+
+*.swp
+.done-sv56
+.history.*
