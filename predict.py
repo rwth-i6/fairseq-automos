@@ -25,8 +25,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--bliss_corpus', type=str, required=False, default=None, help='Path to a bliss corpus')
     parser.add_argument('--text_file', type=str, required=False, default=None, help='Path to a text file containing file names')
-    parser.add_argument('--fairseq_base_model', type=str, required=False, default="fairseq/wav2vec_small.pt", help='Path to pretrained fairseq base model.')
-    parser.add_argument('--finetuned_checkpoint', type=str, required=False, default="pretrained/ckpt_w2vsmall", help='Path to finetuned MOS prediction checkpoint.')
+    parser.add_argument('--fairseq_base_model', type=str, required=False, default=None, help='Path to pretrained fairseq base model.')
+    parser.add_argument('--finetuned_checkpoint', type=str, required=False, default=None, help='Path to finetuned MOS prediction checkpoint.')
     parser.add_argument('--outfile', type=str, required=False, default=None, help='Output filename for your answer.txt file')
     args = parser.parse_args()
 
@@ -36,9 +36,16 @@ def main():
         datadir = text_file_to_tmp_data_dir(args.text_file)
     else:
         assert False, "Please use either --bliss_corpus or --text_file"
-        
-    cp_path = args.fairseq_base_model
-    my_checkpoint = args.finetuned_checkpoint
+
+    if args.fairseq_base_model:
+        cp_path = args.fairseq_base_model
+    else:
+        cp_path = os.path.join(os.path.dirname(__file__), "fairseq/wav2vec_small.pt")
+
+    if args.finetuned_checkpoint:
+        my_checkpoint = args.finetuned_checkpoint
+    else:
+        my_checkpoint = os.path.join(os.path.dirname(__file__), "pretrained/ckpt_w2vsmall")
 
     print("Initialize Model", file=sys.stderr)
     model, cfg, task = fairseq.checkpoint_utils.load_model_ensemble_and_task([cp_path])
