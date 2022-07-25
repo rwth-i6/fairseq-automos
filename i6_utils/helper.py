@@ -18,8 +18,9 @@ def create_data_dir(recordings, tmpdir="tmpdir"):
         wav_recordings.append(outpath)
 
     print("run normalization", file=sys.stderr)
-    norm_exec = os.path.join(os.path.dirname(__file__), "..", "sv56_norm/sv56scripts/batch_normRMSE.sh")
-    subprocess.check_call([norm_exec, tmpdir, os.getcwd()])
+    root_dir = os.path.join(os.path.dirname(__file__), "..")
+    norm_exec = os.path.join(root_dir, "sv56_norm/sv56scripts/batch_normRMSE.sh")
+    subprocess.check_call([norm_exec, tmpdir, root_dir])
 
     print("create DATA folder", file=sys.stderr)
     wav_folder = os.path.join(tmpdir, "DATA", "wav")
