@@ -13,7 +13,7 @@ def create_data_dir(recordings, tmpdir="tmpdir"):
     for recording in recordings:
         name, ext = os.path.splitext(os.path.basename(recording))
         outpath = os.path.join(tmpdir, name + ".wav")
-        cmd = ["sox", recording.audio, "-r", "16000", "-V1", outpath]
+        cmd = ["sox", recording, "-r", "16000", "-V1", outpath]
         subprocess.check_call(cmd)
         wav_recordings.append(outpath)
 
