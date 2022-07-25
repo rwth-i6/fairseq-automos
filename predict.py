@@ -85,7 +85,7 @@ def main():
         output = outputs.cpu().detach().numpy()[0]
         predictions[filenames[0]] = output  ## batch size = 1
 
-    print(np.mean(predictions.values()))
+    print(np.mean(list(predictions.values())))
 
     ## generate answer.txt for codalab
     if args.outfile:
