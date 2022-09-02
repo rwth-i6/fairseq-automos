@@ -40,7 +40,7 @@ def main():
     if args.fairseq_base_model:
         cp_path = args.fairseq_base_model
     else:
-        cp_path = os.path.join(os.path.dirname(__file__), "fairseq/wav2vec_small.pt")
+        cp_path = os.path.join(os.path.dirname(__file__), "fairseq_model/wav2vec_small.pt")
 
     if args.finetuned_checkpoint:
         my_checkpoint = args.finetuned_checkpoint

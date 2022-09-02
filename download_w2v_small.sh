@@ -1,6 +1,6 @@
 #!/bin/bash
-if [ ! -f "fairseq/wav2vec_small.pt" ]; then
-    mkdir -p fairseq
+if [ ! -f "fairseq_model/wav2vec_small.pt" ]; then
+    mkdir -p fairseq_model
     wget https://dl.fbaipublicfiles.com/fairseq/wav2vec/wav2vec_small.pt -P fairseq
     wget https://raw.githubusercontent.com/pytorch/fairseq/main/LICENSE -P fairseq/
 fi
