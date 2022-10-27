@@ -74,7 +74,7 @@ def main():
 
     print('Loading data', file=sys.stderr)
     validset = MyDataset(wavdir, validlist)
-    validloader = DataLoader(validset, batch_size=1, shuffle=True, num_workers=2, collate_fn=validset.collate_fn)
+    validloader = DataLoader(validset, batch_size=1, shuffle=False, num_workers=2, collate_fn=validset.collate_fn)
 
     total_loss = 0.0
     predictions = { }  # filename : prediction
