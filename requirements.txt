@@ -1,5 +1,5 @@
 fairseq==0.10.0
 numpy>=1.22.3
 scipy>=1.8.1
-torch==1.8.1+cu101
+torch==1.8.1
 torchaudio==0.8.1
