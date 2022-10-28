@@ -11,5 +11,5 @@ if [ ! -f "pretrained/ckpt_w2vsmall" ]; then
     tar -zxvf ckpt_w2vsmall.tar.gz
     mv ckpt_w2vsmall pretrained/
     rm ckpt_w2vsmall.tar.gz
-    cp fairseq/LICENSE pretrained/
+    cp fairseq_model/LICENSE pretrained/
 fi
